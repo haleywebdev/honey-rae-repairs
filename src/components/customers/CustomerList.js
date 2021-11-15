@@ -39,6 +39,14 @@ export const CustomerList = () => {
         []
     )
 
+    useEffect(
+        () => {
+
+        },
+        [customers]
+    )
+
+
     // This function returns whatever the HTML will be generated in the browser. 
     // JSX is a type of language used for React that looks like HTML. 
     // It takes the JSX, converts it to JS code and then renders the HTML.
@@ -55,15 +63,18 @@ export const CustomerList = () => {
         // Recall that a .map array method is a conversion tool
 
         <>
-            <h2>Customer's List</h2>
 
             {
                 customers.map(
                     (customerObj) => {
-                        return <ul>{customerObj.name}</ul>
+                        return <ul key={`customer--${customerObj.id}`}>{customerObj.name}</ul>
                     }
                 )
             }
         </>
     )
 }
+
+// If you receive a bug like "Warning: Each child in a list should have a unique "key" prop."
+// Be mindful that react uses the key attribute rather than a unique id attribute for internal rendering of the DOM. 
+// https://reactjs.org/docs/lists-and-keys.html#keys

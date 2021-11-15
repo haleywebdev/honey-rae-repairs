@@ -3,8 +3,6 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom';
-import { CustomerList } from './components/customers/CustomerList';
-import { EmployeeList } from './components/employees/EmployeeList';
 
 // Rendering our first component to make it run. We invoke it on line 16 in JSX.
 import { Repairs } from './components/Repairs';
@@ -15,8 +13,6 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <Repairs />
-    <CustomerList />
-    <EmployeeList />
   </React.StrictMode>,
   document.getElementById('root')
 );
