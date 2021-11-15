@@ -18,6 +18,8 @@ export const CustomerList = () => {
 
     const [customers, setCustomers] = useState([]) // useState() is a function or hook in React. This returns an array.
 
+    const [totalCustomerMessage, updateMessage] = useState("")
+
     // Think about what state you want this component to render. (useState())
     // Deconstruct the array it returns.
     // Define a variable to hold the state and a variable to hold the function to modify the state.
@@ -29,6 +31,7 @@ export const CustomerList = () => {
     // This runs code when any state changes. It is like an event listener. 
     useEffect(
         () => {
+            console.log("Initial useEffect")
             // get the data from the API and put it in customers
             fetch("http://localhost:8088/customers")
                 .then(res => res.json())
@@ -39,9 +42,18 @@ export const CustomerList = () => {
         []
     )
 
+    // Only display a few customers and have a running total of the amount of customers.
+    // Use 
+
     useEffect(
         () => {
-
+            console.log("Customer state changed")
+            if (customers.length === 1) {
+                updateMessage("You have 1 customer")
+            } 
+            else {
+                updateMessage(`You have ${customers.length} customers`)
+            }
         },
         [customers]
     )
@@ -64,8 +76,10 @@ export const CustomerList = () => {
 
         <>
 
+        <div>{totalCustomerMessage}</div>
+
             {
-                customers.map(
+                customers.slice(0, 5).map(
                     (customerObj) => {
                         return <ul key={`customer--${customerObj.id}`}>{customerObj.name}</ul>
                     }
