@@ -31,7 +31,7 @@ export const EmployeeList = () => {
             {
                 employees.map(
                     (employee) => {
-                        return <p key={`employee--${employee.id}`}>{employee.name}</p>
+                        return <li key={`employee--${employee.id}`}>{employee.name}</li>
                     }
                 )
             }
