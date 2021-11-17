@@ -1,26 +1,26 @@
 
 // This is the main component.
 
+import { ApplicationViews } from "./ApplicationViews";
 import { CustomerList } from "./customers/CustomerList";
 import { EmployeeList } from "./employees/EmployeeList";
+import { NavBar } from "./nav/NavBar";
 import { TicketList } from "./serviceTickets/TicketList";
+import "./Repairs.css"
+
+// Repairs is a container component.
 
 export const Repairs = () => {
 
-//Render the customer, employee list.
+//Render the html
     return (
 
         <>
+            <NavBar />
             <h1>Honey Rae's Repair Shop</h1>
 
-            <h2>Customer's List</h2>
-            <CustomerList />
+            <ApplicationViews />
 
-            <h2>Employee's List</h2>
-            <EmployeeList />
-
-            <h2>Service Tickets</h2>
-            <TicketList />
         </>
     )
 }

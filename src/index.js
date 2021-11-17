@@ -5,7 +5,9 @@ import ReactDOM from 'react-dom';
 // Rendering our first component to make it run. We invoke it on line 16 in JSX.
 import { Repairs } from './components/Repairs';
 // Enable routing for your application. 
-import BrowserRouter from 'react-router-dom';
+// In React, you will use something called a Router to handle the rendering of different components when the user clicks on navigation items. 
+//This also allows users to bookmark specific places within a single page app.
+import { BrowserRouter }from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
