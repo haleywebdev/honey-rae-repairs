@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 // For each service ticket, we want to display
 // 1. The description of the service ticket.
@@ -17,6 +18,7 @@ import React, { useEffect, useState } from "react"
 
 export const TicketList = () => {
     const [tickets, updateTickets] = useState([])
+    const history = useHistory()
 
     useEffect(
         () => {
@@ -31,6 +33,11 @@ export const TicketList = () => {
 
     return (
         <>
+
+            <div>
+                <button onClick={() => history.push("/ticket/create")}>Create Ticket</button>
+            </div>
+
             {
                 tickets.map(
                     (ticket) => {
