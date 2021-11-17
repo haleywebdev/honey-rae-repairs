@@ -1,26 +1,37 @@
 
 // This is the main component.
 
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationViews";
-import { CustomerList } from "./customers/CustomerList";
-import { EmployeeList } from "./employees/EmployeeList";
 import { NavBar } from "./nav/NavBar";
-import { TicketList } from "./serviceTickets/TicketList";
-import "./Repairs.css"
+import { Login } from "./auth/Login";
+import { Register } from "./auth/Register";
+import "./Repairs.css";
 
-// Repairs is a container component.
+export const Repairs = () => (
+    <>
+        <Route
+            render={() => {
+                if (localStorage.getItem("honey_customer")) {
+                    return (
+                        <>
+                            <NavBar />
+                            <h2>Honey Rae's Repair Shop</h2>
+                            <ApplicationViews />
+                        </>
+                    );
+                } else {
+                    return <Redirect to="/login" />;
+                }
+            }}
+        />
 
-export const Repairs = () => {
-
-//Render the html
-    return (
-
-        <>
-            <NavBar />
-            <h1>Honey Rae's Repair Shop</h1>
-
-            <ApplicationViews />
-
-        </>
-    )
-}
+        <Route path="/login">
+            <Login />
+        </Route>
+        <Route path="/register">
+            <Register />
+        </Route>
+    </>
+);
