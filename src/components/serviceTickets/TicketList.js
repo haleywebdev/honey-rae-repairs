@@ -35,18 +35,14 @@ export const TicketList = () => {
         <>
 
             <div>
-                <button onClick={() => history.push("/ticket/create")}>Create Ticket</button>
+                <button onClick={() => history.push("/tickets/create")}>Create Ticket</button>
             </div>
 
             {
                 tickets.map(
                     (ticket) => {
-                        return <div key={`ticket--${ticket.id}`}>
-                            <p>Description: {ticket.description}
-                                <p>Submitted by: {ticket.customer.name}</p>
-                                <p>Worked on by: {ticket.employee.name}</p>
-                            </p>
-                        </div>
+                        return <p key={`ticket--${ticket.id}`}>{ticket.description}. Submitted by: {ticket.customer.name}. Worked on by: {ticket.employee.name}
+                        </p>
                     }
                 )
             }

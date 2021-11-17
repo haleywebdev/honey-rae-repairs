@@ -24,11 +24,11 @@ export const ApplicationViews = () => {
                 <EmployeeList />
             </Route>
 
-            <Route exact path="/serviceTickets">
+            <Route exact path="/tickets">
                 <TicketList />
             </Route>
 
-            <Route path="/ticket/create">
+            <Route path="/tickets/create">
                 <TicketForm />
             </Route>
 
