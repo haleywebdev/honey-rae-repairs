@@ -1,18 +1,18 @@
 // Basic react component that allows us to start using all of the features that come with react library
 
 import React from 'react';
-
 import ReactDOM from 'react-dom';
-
 // Rendering our first component to make it run. We invoke it on line 16 in JSX.
 import { Repairs } from './components/Repairs';
-
-import './index.css';
+// Enable routing for your application. 
+import BrowserRouter from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <BrowserRouter>
     <Repairs />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
