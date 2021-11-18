@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+import "./Tickets.css"
 
 // For each service ticket, we want to display
 // 1. The description of the service ticket.
@@ -41,8 +42,14 @@ export const TicketList = () => {
             {
                 tickets.map(
                     (ticket) => {
-                        return <p key={`ticket--${ticket.id}`}>{ticket.description}. Submitted by: {ticket.customer.name}. Worked on by: {ticket.employee.name}
-                        </p>
+                        return <>
+                            
+                            <p className={`ticket`}>
+                                {ticket.emergency ? "🚑" : ""} {ticket.description} submitted by {ticket.customer.name} and worked on by {ticket.employee.name}
+                            </p>
+
+                        </>
+
                     }
                 )
             }
