@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+import { Link } from "react-router-dom"
 import "./Tickets.css"
 
 // For each service ticket, we want to display
@@ -45,7 +46,7 @@ export const TicketList = () => {
                         return <>
                             
                             <p className={ticket.emergency ? `emergency` : `ticket`}>
-                                {ticket.emergency ? "🚑" : ""} {ticket.description} submitted by {ticket.customer.name} and worked on by {ticket.employee.name}
+                                {ticket.emergency ? "🚑" : ""} <Link to={`/tickets/${ticket.id}`}>{ticket.description}</Link> submitted by {ticket.customer.name} and worked on by {ticket.employee.name}
                             </p>
 
                         </>

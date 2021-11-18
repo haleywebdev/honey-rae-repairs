@@ -17,7 +17,7 @@ export const Repairs = () => (
                     return (
                         <>
                             <NavBar />
-                            <h2>Honey Rae's Repair Shop</h2>
+                            <h1>Honey Rae's Repair Shop</h1>
                             <ApplicationViews />
                         </>
                     );
