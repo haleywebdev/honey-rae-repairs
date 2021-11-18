@@ -44,7 +44,7 @@ export const TicketList = () => {
                     (ticket) => {
                         return <>
                             
-                            <p className={`ticket`}>
+                            <p className={ticket.emergency ? `emergency` : `ticket`}>
                                 {ticket.emergency ? "🚑" : ""} {ticket.description} submitted by {ticket.customer.name} and worked on by {ticket.employee.name}
                             </p>
 
